@@ -18,3 +18,33 @@
     height: 100vh;
     position: relative;
 }
+
+
+.btn_container button{
+    margin: 15px 10px;
+    background-color: #0c4a0e;
+    color: #fff;
+}
+
+.btn_container button:disabled{
+    background-color: gray;
+    opacity: 0.9;
+}
+#reset{
+    padding: 8px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+#redo{
+    padding: 8px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+#undo{
+    padding: 8px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}

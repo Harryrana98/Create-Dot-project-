@@ -43,8 +43,8 @@ wrapper.addEventListener("click", function (event) {
   const x = event.pageX;
   const y = event.pageY;
   
-  para.style.left = `${x - 10}px`;
-  para.style.top = `${y - 30}px`;
+  para.style.left = `${x - 8}px`;
+  para.style.top = `${y - 70}px`;
   wrapper.appendChild(para);
   arr1.push(para)
 //   arr1=[];
@@ -55,20 +55,31 @@ wrapper.addEventListener("click", function (event) {
   console.log(colorChange);
   para.style.backgroundColor=colorChange.backgroundColor
 
+  reset.disabled=false;
+  undo.disabled=false;
+  redo.disabled=true;
+
 
 });
 
 reset.addEventListener("click",function(){
-    wrapper.innerHTML=""
-
-})
-
-undo.addEventListener("click",function(){
-     if(arr1.length>0){
-        const lastDot=arr1.pop();
-        wrapper.removeChild(lastDot)
-        arr2.push(lastDot)
-     }
+  wrapper.innerHTML=""
+  reset.disabled=true;
+  undo.disabled=true;
+  redo.disabled=true;
+    
+  })
+  
+  undo.addEventListener("click",function(){
+    if(arr1.length>0){
+      const lastDot=arr1.pop();
+      wrapper.removeChild(lastDot)
+      arr2.push(lastDot)
+      reset.disabled=false;
+      undo.disabled=false;
+      redo.disabled=false;
+    }
+    
 })
 
 redo.addEventListener("click",function(){
@@ -76,6 +87,9 @@ redo.addEventListener("click",function(){
         const redoDot=arr2.pop();
         wrapper.appendChild(redoDot)
         arr1.push(redoDot)
+        reset.disabled=false;
+        undo.disabled=false;
+        redo.disabled=false;
     }
 })
 
