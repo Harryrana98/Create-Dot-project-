@@ -3,29 +3,9 @@ const redo = document.querySelector("#redo");
 const undo = document.querySelector("#undo");
 const wrapper = document.querySelector("#wrapper");
 
-const colors = [
-  { backgroundColor: "black" },
-  { backgroundColor: "white" },
-  { backgroundColor: "yellow" },
-  { backgroundColor: "red" },
-  { backgroundColor: "purple" },
-  { backgroundColor: "green" },
-  { backgroundColor: "blue" },
-  { backgroundColor: "orange" },
-  { backgroundColor: "brown" },
-  { backgroundColor: "pink" },
-  { backgroundColor: "gray" },
-  { backgroundColor: "violet" },
-  { backgroundColor: "aqua" },
-  { backgroundColor: "silver" },
-  { backgroundColor: "teal" },
-  { backgroundColor: "turquoise" },
-  { backgroundColor: "tan" },
-  { backgroundColor: "lavender" },
-  { backgroundColor: "maroon" },
-  { backgroundColor: "olive" },
-  { backgroundColor: "navy" },
-];
+import colors from "./index.js";
+console.log(colors);
+
 
 const  arr1=[]
 const arr2=[]
@@ -85,7 +65,7 @@ reset.addEventListener("click",function(){
 redo.addEventListener("click",function(){
     if(arr2.length>0){
         const redoDot=arr2.pop();
-        wrapper.appendChild(redoDot)
+        wrapper.appendChild(redoDot) 
         arr1.push(redoDot)
         reset.disabled=false;
         undo.disabled=false;
